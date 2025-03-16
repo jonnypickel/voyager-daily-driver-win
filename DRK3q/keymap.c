@@ -307,7 +307,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
     case PARTY:
     if (record->event.pressed) {
-      SEND_STRING(SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_2) SS_TAP(X_KP_7) SS_TAP(X_KP_8) SS_TAP(X_KP_8) SS_TAP(X_KP_9) ));
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_2) SS_TAP(X_KP_7) SS_TAP(X_KP_8) SS_TAP(X_KP_8) SS_TAP(X_KP_1) ));
     }
     break;
     case ROFL:
@@ -337,7 +337,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
     case SUCCESS_MK:
     if (record->event.pressed) {
-      SEND_STRING(SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_9) SS_TAP(X_KP_9) SS_TAP(X_KP_8) SS_TAP(X_KP_9) ));
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_9) SS_TAP(X_KP_8) SS_TAP(X_KP_9) ));
     }
     break;
     case FAIL_X:
