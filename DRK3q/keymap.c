@@ -493,7 +493,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
     case ST_MACRO_41:
     if (record->event.pressed) {
-      {KC_LCTL, KC_LSFT, KC_U, '1', 'F', '6', '0', 'A', KC_ENT}
+      {KC_LCTL, KC_LSFT, KC_U, '1', 'F', '4', '4', 'D', KC_ENT}
     }
 
     case RGB_SLD:
