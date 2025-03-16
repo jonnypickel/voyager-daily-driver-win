@@ -493,7 +493,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
     case ST_MACRO_41:
     if (record->event.pressed) {
-      
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_2) SS_TAP(X_KP_8) SS_TAP(X_KP_0)  SS_TAP(X_KP_7)  SS_TAP(X_KP_7) ))
     }
     break;
 
