@@ -5,6 +5,16 @@
 
 enum custom_keycodes {
   RGB_SLD = ML_SAFE_RANGE,
+  THUMBS_UP_LT,
+  THUMBS_DOWN_LT,
+  PARTY,
+  ROFL,
+  HUNDRED,
+  HORNS,
+  FINGERS_XED,
+  QUESTION,
+  SUCCESS,
+  FAIL,
   ST_MACRO_0,
   ST_MACRO_1,
   ST_MACRO_2,
@@ -46,7 +56,6 @@ enum custom_keycodes {
   ST_MACRO_38,
   ST_MACRO_39,
   ST_MACRO_40,
-  ST_MACRO_41,
 };
 
 
@@ -68,7 +77,7 @@ enum tap_dance_codes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
-    TD(DANCE_0),    ST_MACRO_41,    KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_MINUS,       
+    TD(DANCE_0),    THUMBS_UP_LT,   THUMBS_DOWN_LT, PARTY,          ROFL,           HUNDRED,                                        HORNS,          FINGERS_XED,    QUESTION,       SUCCESS,        FAIL,           KC_MINUS,       
     KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           TD(DANCE_2),    
     MO(1),          KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,           KC_SCLN,        KC_QUOTE,       
     KC_TRANSPARENT, KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_BSLS,        
@@ -286,6 +295,56 @@ bool rgb_matrix_indicators_user(void) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
+    case THUMBS_UP_LT:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_2) SS_TAP(X_KP_8) SS_TAP(X_KP_0) SS_TAP(X_KP_7) SS_TAP(X_KP_7) ) SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_2) SS_TAP(X_KP_7) SS_TAP(X_KP_9) SS_TAP(X_KP_9) SS_TAP(X_KP_5) ));
+    }
+    break;
+    case THUMBS_DOWN_LT:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_2) SS_TAP(X_KP_8) SS_TAP(X_KP_0) SS_TAP(X_KP_7) SS_TAP(X_KP_8) ) SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_2) SS_TAP(X_KP_7) SS_TAP(X_KP_9) SS_TAP(X_KP_9) SS_TAP(X_KP_5) ));
+    }
+    break;
+    case PARTY:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_2) SS_TAP(X_KP_7) SS_TAP(X_KP_8) SS_TAP(X_KP_8) SS_TAP(X_KP_9) ));
+    }
+    break;
+    case ROFL:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_2) SS_TAP(X_KP_9) SS_TAP(X_KP_3) SS_TAP(X_KP_1) SS_TAP(X_KP_5) ));
+    }
+    break;
+    case HUNDRED:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_2) SS_TAP(X_KP_8) SS_TAP(X_KP_1) SS_TAP(X_KP_7) SS_TAP(X_KP_5) ));
+    }
+    break;
+    case HORNS:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_2) SS_TAP(X_KP_9) SS_TAP(X_KP_3) SS_TAP(X_KP_0) SS_TAP(X_KP_4) ) SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_2) SS_TAP(X_KP_7) SS_TAP(X_KP_9) SS_TAP(X_KP_9) SS_TAP(X_KP_5) ));
+    }
+    break;
+    case FINGERS_XED:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_2) SS_TAP(X_KP_9) SS_TAP(X_KP_3) SS_TAP(X_KP_1) SS_TAP(X_KP_0) ) SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_2) SS_TAP(X_KP_7) SS_TAP(X_KP_9) SS_TAP(X_KP_9) SS_TAP(X_KP_5) ));
+    }
+    break;
+    case QUESTION:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_0) SS_TAP(X_KP_0) SS_TAP(X_KP_6) SS_TAP(X_KP_8) ));
+    }
+    break;
+    case SUCCESS:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_9) SS_TAP(X_KP_9) SS_TAP(X_KP_8) SS_TAP(X_KP_9) ));
+    }
+    break;
+    case FAIL:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_0) SS_TAP(X_KP_0) SS_TAP(X_KP_6) SS_TAP(X_KP_0) ));
+    }
+    break;
     case ST_MACRO_0:
     if (record->event.pressed) {
       SEND_STRING(SS_LSFT(SS_TAP(X_1)) SS_DELAY(100) SS_LSFT(SS_TAP(X_1)) SS_DELAY(100) SS_TAP(X_W) SS_DELAY(100) SS_TAP(X_X) SS_DELAY(100) SS_TAP(X_M));
@@ -489,11 +548,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case ST_MACRO_40:
     if (record->event.pressed) {
       SEND_STRING(SS_LSFT(SS_TAP(X_1)) SS_DELAY(100) SS_LSFT(SS_TAP(X_1)) SS_DELAY(100) SS_TAP(X_C) SS_DELAY(100) SS_TAP(X_S) SS_DELAY(100) SS_TAP(X_R)  SS_DELAY(100) SS_TAP(X_ENTER));
-    }
-    break;
-    case ST_MACRO_41:
-    if (record->event.pressed) {
-      SEND_STRING(SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_2) SS_TAP(X_KP_8) SS_TAP(X_KP_0)  SS_TAP(X_KP_7)  SS_TAP(X_KP_7) ) SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_2) SS_TAP(X_KP_7) SS_TAP(X_KP_9) SS_TAP(X_KP_9) SS_TAP(X_KP_5) ));
     }
     break;
 
