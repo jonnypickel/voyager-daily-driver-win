@@ -21,7 +21,7 @@
 
 #define NO_AUTO_SHIFT_NUMERIC
 #define HOLD_ON_OTHER_KEY_PRESS
-#define SERIAL_NUMBER "DRK3q/eaawDJ"
+#define SERIAL_NUMBER "DRK3q/6aa7xq"
 #define LAYER_STATE_16BIT
 #define COMBO_COUNT 1
 
