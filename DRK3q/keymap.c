@@ -15,6 +15,44 @@ enum custom_keycodes {
   QUESTION,
   SUCCESS_MK,
   FAIL_X,
+  BOX_CUR_TR,
+  BOX_CUR_BR,
+  BOX_CUR_BL,
+  BOX_CUR_TL,
+  BOX_HL_2D,
+  BOX_HL_3D,
+  BOX_HL_4D,
+  BOX_VL_2D,
+  BOX_VL_3D,
+  BOX_VL_4D,
+  BOXHVY_HL,
+  BOXHVY_HL_2D,
+  BOXHVY_HL_3D,
+  BOXHVY_HL_4D,
+  BOXHVY_VL,
+  BOXHVY_VL_2D,
+  BOXHVY_VL_3D,
+  BOXHVY_VL_4D,
+  BOXHVY_COR_TR,
+  BOXHVY_COR_BR,
+  BOXHVY_COR_BL,
+  BOXHVY_COR_TL,
+  BOXHVY_MIDDLE,
+  BOXHVY_EDGE_T,
+  BOXHVY_EDGE_R,
+  BOXHVY_EDGE_B,
+  BOXHVY_EDGE_L,
+  BOXEXT_BIG_X,
+  BOXEXT_SLASH_DN,
+  BOXEXT_SLASH_UP,
+  BOXEXT_TICK_UP,
+  BOXEXT_TICK_RT,
+  BOXEXT_TICK_DN,
+  BOXEXT_TICK_LF,
+  BOXEXTHVY_TICK_UP,
+  BOXEXTHVY_TICK_RT,
+  BOXEXTHVY_TICK_DN,
+  BOXEXTHVY_TICK_LF,
   ST_MACRO_0,
   ST_MACRO_1,
   ST_MACRO_2,
@@ -95,7 +133,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NUM,                                         ST_MACRO_4,     KC_KP_7,        KC_KP_8,        KC_KP_9,        KC_KP_SLASH,    KC_NO,          
     DM_RSTP,        DM_PLY2,        KC_NO,          DM_REC2,        KC_NO,          KC_NO,                                          ST_MACRO_5,     KC_KP_4,        KC_KP_5,        KC_KP_6,        KC_KP_ENTER,    KC_DELETE,      
     KC_TRANSPARENT, KC_NO,          KC_NO,          MO(3),          KC_TRANSPARENT, QK_LLCK,                                        KC_EQUAL,       KC_KP_1,        KC_KP_2,        KC_KP_3,        KC_KP_PLUS,     KC_KP_ASTERISK, 
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          LALT(LCTL(LSFT(KC_Z))),KC_NO,                                          KC_KP_0,        KC_KP_0,        KC_DLR,         KC_KP_DOT,      KC_COMMA,       KC_KP_MINUS,    
+    KC_NO,          KC_NO,          KC_NO,          AS_TOGG,        LALT(LCTL(LSFT(KC_Z))),KC_NO,                                          KC_KP_0,        KC_KP_0,        KC_DLR,         KC_KP_DOT,      KC_COMMA,       KC_KP_MINUS,    
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [3] = LAYOUT_voyager(
@@ -120,17 +158,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     KC_NO,          KC_NO,                                          KC_NO,          KC_NO
   ),
   [6] = LAYOUT_voyager(
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_TRANSPARENT, ST_MACRO_17,    ST_MACRO_18,    ST_MACRO_19,    KC_TRANSPARENT, KC_DELETE,      
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          BOX_HL_2D,      BOX_HL_3D,      BOX_HL_4D,      BOX_VL_2D,      BOX_VL_3D,      BOX_VL_4D, 
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          BOX_CUR_TL,     ST_MACRO_17,    ST_MACRO_18,    ST_MACRO_19,    BOX_CUR_TR,     KC_DELETE,      
     KC_TRANSPARENT, KC_NO,          KC_NO,          MO(8),          KC_NO,          KC_NO,                                          ST_MACRO_20,    ST_MACRO_21,    ST_MACRO_22,    ST_MACRO_23,    ST_MACRO_24,    KC_NO,          
-    MO(7),          KC_NO,          MO(9),          KC_NO,          KC_NO,          KC_TRANSPARENT,                                 KC_TRANSPARENT, ST_MACRO_25,    ST_MACRO_26,    ST_MACRO_27,    KC_TRANSPARENT, KC_NO,          
+    MO(7),          KC_NO,          MO(9),          KC_NO,          KC_NO,          KC_TRANSPARENT,                                 BOX_CUR_BL,     ST_MACRO_25,    ST_MACRO_26,    ST_MACRO_27,    BOX_CUR_BR,     KC_NO,          
                                                     KC_TRANSPARENT, KC_NO,                                          KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [7] = LAYOUT_voyager(
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_NO,          KC_DELETE,      
-    KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_NO,          
-    KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRANSPARENT,                                 KC_NO,          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_NO,          KC_NO,          
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          BOXHVY_HL_2D,   BOXHVY_HL_3D,   BOXHVY_HL_4D,   BOXHVY_VL_2D,   BOXHVY_VL_3D,   BOXHVY_VL_4D, 
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          BOXHVY_COR_TL,  BOXHVY_EDGE_T,  BOXHVY_COR_TR,  KC_NO,          KC_DELETE,      
+    KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          BOXHVY_HL,      BOXHVY_EDGE_L,  BOXHVY_MIDDLE,  BOXHVY_EDGE_R,  BOXHVY_VL,      KC_NO,          
+    KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRANSPARENT,                                 KC_NO,          BOXHVY_COR_BL,  BOXHVY_EDGE_B,  BOXHVY_COR_BR,  KC_NO,          KC_NO,          
                                                     KC_TRANSPARENT, KC_NO,                                          KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [8] = LAYOUT_voyager(
@@ -142,16 +180,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [9] = LAYOUT_voyager(
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_NO,          KC_DELETE,      
-    KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_NO,          KC_NO,          
-    MO(10),         KC_NO,          KC_TRANSPARENT, KC_NO,          KC_NO,          KC_TRANSPARENT,                                 KC_NO,          KC_NO,          KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          BOXEXT_SLASH_DN, BOXEXT_TICK_UP, BOXEXT_SLASH_UP, KC_NO,        KC_DELETE,      
+    KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          BOXEXT_TICK_LF, BOXEXT_BIG_X,   BOXEXT_TICK_RT, KC_NO,          KC_NO,          
+    MO(10),         KC_NO,          KC_TRANSPARENT, KC_NO,          KC_NO,          KC_TRANSPARENT,                                 KC_NO,          KC_NO,          BOXEXT_TICK_DN, KC_NO,          KC_NO,          KC_NO,          
                                                     KC_TRANSPARENT, KC_NO,                                          KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [10] = LAYOUT_voyager(
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_TRANSPARENT, KC_NO,          KC_NO,          KC_DELETE,      
-    KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_TRANSPARENT, KC_NO,          KC_TRANSPARENT, KC_NO,          KC_NO,          
-    KC_TRANSPARENT, KC_NO,          KC_TRANSPARENT, KC_NO,          KC_NO,          KC_TRANSPARENT,                                 KC_NO,          KC_NO,          KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          BOXEXTHVY_TICK_UP, KC_NO,       KC_NO,          KC_DELETE,      
+    KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          BOXEXTHVY_TICK_LF, KC_NO,       BOXEXTHVY_TICK_RT, KC_NO,       KC_NO,          
+    KC_TRANSPARENT, KC_NO,          KC_TRANSPARENT, KC_NO,          KC_NO,          KC_TRANSPARENT,                                 KC_NO,          KC_NO,          BOXEXTHVY_TICK_DN, KC_NO,       KC_NO,          KC_NO,          
                                                     KC_TRANSPARENT, KC_NO,                                          KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [11] = LAYOUT_voyager(
@@ -344,6 +382,196 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case FAIL_X:
     if (record->event.pressed) {
       SEND_STRING(SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_0) SS_TAP(X_KP_0) SS_TAP(X_KP_6) SS_TAP(X_KP_0) ));
+    }
+    break;
+    case BOX_CUR_TR:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_8) SS_TAP(X_KP_2) ));
+    }
+    break;
+    case BOX_CUR_BR:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_8) SS_TAP(X_KP_3) ));
+    }
+    break;
+    case BOX_CUR_BL:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_8) SS_TAP(X_KP_4) ));
+    }
+    break;
+    case BOX_CUR_TL:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_8) SS_TAP(X_KP_1) ));
+    }
+    break;
+    case BOX_HL_2D:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_4) SS_TAP(X_KP_8) ));
+    }
+    break;
+    case BOX_HL_3D:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_4) SS_TAP(X_KP_7) SS_TAP(X_KP_6) ));
+    }
+    break;
+    case BOX_HL_4D:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_4) SS_TAP(X_KP_8) SS_TAP(X_KP_0) ));
+    }
+    break;
+    case BOX_VL_2D:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_5) SS_TAP(X_KP_0) ));
+    }
+    break;
+    case BOX_VL_3D:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_4) SS_TAP(X_KP_7) SS_TAP(X_KP_8) ));
+    }
+    break;
+    case BOX_VL_4D:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_4) SS_TAP(X_KP_8) SS_TAP(X_KP_2) ));
+    }
+    break;
+    case BOXHVY_HL:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_4) SS_TAP(X_KP_7) SS_TAP(X_KP_2) ));
+    }
+    break;
+    case BOXHVY_HL_2D:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_4) SS_TAP(X_KP_9) ));
+    }
+    break;
+    case BOXHVY_HL_3D:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_4) SS_TAP(X_KP_7) SS_TAP(X_KP_7) ));
+    }
+    break;
+    case BOXHVY_HL_4D:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_4) SS_TAP(X_KP_8) SS_TAP(X_KP_1) ));
+    }
+    break;
+    case BOXHVY_VL:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_4) SS_TAP(X_KP_7) SS_TAP(X_KP_5) ));
+    }
+    break;
+    case BOXHVY_VL_2D:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_5) SS_TAP(X_KP_1) ));
+    }
+    break;
+    case BOXHVY_VL_3D:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_4) SS_TAP(X_KP_7) SS_TAP(X_KP_9) ));
+    }
+    break;
+    case BOXHVY_VL_4D:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_4) SS_TAP(X_KP_8) SS_TAP(X_KP_3) ));
+    }
+    break;
+    case BOXHVY_COR_TR:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_4) SS_TAP(X_KP_9) SS_TAP(X_KP_1) ));
+    }
+    break;
+    case BOXHVY_COR_BR:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_4) SS_TAP(X_KP_9) SS_TAP(X_KP_9) ));
+    }
+    break;
+    case BOXHVY_COR_BL:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_4) SS_TAP(X_KP_9) SS_TAP(X_KP_5) ));
+    }
+    break;
+    case BOXHVY_COR_TL:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_4) SS_TAP(X_KP_8) SS_TAP(X_KP_7) ));
+    }
+    break;
+    case BOXHVY_MIDDLE:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_4) SS_TAP(X_KP_7) ));
+    }
+    break;
+    case BOXHVY_EDGE_T:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_2) SS_TAP(X_KP_3) ));
+    }
+    break;
+    case BOXHVY_EDGE_R:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_1) SS_TAP(X_KP_5) ));
+    }
+    break;
+    case BOXHVY_EDGE_B:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_3) SS_TAP(X_KP_1) ));
+    }
+    break;
+    case BOXHVY_EDGE_L:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_0) SS_TAP(X_KP_7) ));
+    }
+    break;
+    case BOXEXT_BIG_X:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_8) SS_TAP(X_KP_7) ));
+    }
+    break;
+    case BOXEXT_SLASH_DN:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_8) SS_TAP(X_KP_6) ));
+    }
+    break;
+    case BOXEXT_SLASH_UP:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_8) SS_TAP(X_KP_5) ));
+    }
+    break;
+    case BOXEXT_TICK_UP:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_8) SS_TAP(X_KP_9) ));
+    }
+    break;
+    case BOXEXT_TICK_RT:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_9) SS_TAP(X_KP_0) ));
+    }
+    break;
+    case BOXEXT_TICK_DN:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_9) SS_TAP(X_KP_1) ));
+    }
+    break;
+    case BOXEXT_TICK_LF:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_8) SS_TAP(X_KP_8) ));
+    }
+    break;
+    case BOXEXTHVY_TICK_UP:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_9) SS_TAP(X_KP_3) ));
+    }
+    break;
+    case BOXEXTHVY_TICK_RT:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_9) SS_TAP(X_KP_4) ));
+    }
+    break;
+    case BOXEXTHVY_TICK_DN:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_9) SS_TAP(X_KP_5) ));
+    }
+    break;
+    case BOXEXTHVY_TICK_LF:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_9) SS_TAP(X_KP_5) SS_TAP(X_KP_9) SS_TAP(X_KP_2) ));
     }
     break;
     case ST_MACRO_0:
